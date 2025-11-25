@@ -1,0 +1,103 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Ksenyff/AI/blob/main/HW4.Regress\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Домашнее задание №4 - Регрессионный анализ\n",
+        "\n",
+        "Каждый студент получает [свой датасет](https://drive.google.com/drive/folders/1k0cdVLjOMF7U014bsOTPcfSYDRqpQKHF?usp=sharing) из [списка](https://docs.google.com/spreadsheets/d/1Q27ZRp2xW5qlX2h6d66mxutTFkiHa6Zr6FDIvEwpEkE/edit?usp=sharing) для выполнения регрессионного анализа. Необходимо выполнить поставленные задачи."
+      ],
+      "metadata": {
+        "id": "8ZG_0q3uaXnr"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Выполненную работу нужно отправить файлом IPYNB на почту **aneremin@it.kfu.ru** до **26.11.25 17:20**\n",
+        "\n",
+        "Название файла и темы письма необходимо оформить в формате **HW4.M2.2025.Имя.Фамилия**"
+      ],
+      "metadata": {
+        "id": "19qLaeVpf0Xo"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## Задачи:\n",
+        "1. Для полученных данных выполнить проверку воспроизводимости опытов\n",
+        "- Посчитать значение коэффициента Кохрена, сделать вывод об однородности дисперсий (о том, что опыты воспроизводимы)\n",
+        "- Посчитать дисперсию воспроизводимости (ошибку эксперимента)\n",
+        "2. Подобрать модель, которая описывает данные и найти неизвестные коэффициенты\n",
+        "- Вывести график с точками данных\n",
+        "- Подобрать модель, обучить и выполнить предсказание\n",
+        "- Вывести вычисленные коэффициенты регрессионной модели\n",
+        "- Вывести график с точками и построенной моделью\n",
+        "3. Проверить значимость коэффициентов\n",
+        "- Вычислить среднее квадратическое отклонение коэффициентов\n",
+        "- Вычислить значение расчетного значения t-критерия значимости коэффициентов\n",
+        "- Сделать вывод для каждого коэффициента - значим он или нет и почему\n",
+        "4. Проверить адекватность построенной модели\n",
+        "- Вычислить расчетное значение критерия Фишера\n",
+        "- Сделать вывод об адекватности модели"
+      ],
+      "metadata": {
+        "id": "sd56tHzBafTi"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Загрузка датасета"
+      ],
+      "metadata": {
+        "id": "qyuVOJZGuuHP"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "LLEHIeeCaBNu"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "path_to_dataset = 'УКАЖИТЕ ПУТЬ ДО ВАШЕГО ДАТАСЕТА'\n",
+        "data = np.load(path_to_dataset, allow_pickle=True)\n",
+        "n, m, X, Y = data\n",
+        "\n",
+        "print(\"Количество экспериментов n =\", n)\n",
+        "print(\"Количество повторений в каждом эксперименте m =\", m)\n",
+        "print(\"Количество факторов r =\", X.shape[1])"
+      ]
+    }
+  ]
+}
